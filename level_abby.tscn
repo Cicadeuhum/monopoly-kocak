@@ -1,21 +1,135 @@
-[gd_scene load_steps=2 format=3 uid="uid://db841cnaifibp"]
+[gd_scene load_steps=4 format=3 uid="uid://db841cnaifibp"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6q48y"]
+[ext_resource type="PackedScene" uid="uid://k3dtpbh6nfys" path="res://player.tscn" id="1_52dxm"]
+[ext_resource type="PackedScene" uid="uid://c5rt7dn6j5xqh" path="res://tile_sudut.tscn" id="2_2gfwj"]
+[ext_resource type="PackedScene" uid="uid://b3psvwndgyeyv" path="res://tile_tengah.tscn" id="3_gvklg"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-shape = SubResource("BoxShape3D_6q48y")
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48276, 2.23755)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.76686, 2.23755)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48276, 2.23755)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.43231, -7.78761)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -1.48276, -8.58572)
-shape = SubResource("BoxShape3D_6q48y")
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_52dxm")]
+
+[node name="tile_sudut" parent="." instance=ExtResource("2_2gfwj")]
+
+[node name="Node3D3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16273, 0, -1.49986)
+
+[node name="tile_tengah" parent="Node3D3" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.68029, 0, 0)
+
+[node name="tile_tengah2" parent="Node3D3" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.68029, 0, 0)
+
+[node name="tile_tengah3" parent="Node3D3" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.68029, 0, 0)
+
+[node name="tile_tengah4" parent="Node3D3" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68029, 0, 0)
+
+[node name="tile_tengah5" parent="Node3D3" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68029, 0, 0)
+
+[node name="tile_tengah6" parent="Node3D3" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68029, 0, 0)
+
+[node name="tile_tengah7" parent="Node3D3" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31971, 0, 0)
+
+[node name="tile_tengah8" parent="Node3D3" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31971, 0, 0)
+
+[node name="tile_tengah9" parent="Node3D3" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31971, 0, 0)
+
+[node name="Node3D4" type="Node3D" parent="."]
+
+[node name="tile_tengah10" parent="Node3D4" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 9)
+
+[node name="tile_tengah11" parent="Node3D4" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 9)
+
+[node name="tile_tengah12" parent="Node3D4" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 9)
+
+[node name="tile_tengah13" parent="Node3D4" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 9)
+
+[node name="tile_tengah14" parent="Node3D4" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 9)
+
+[node name="tile_tengah15" parent="Node3D4" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 9)
+
+[node name="tile_tengah16" parent="Node3D4" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 9)
+
+[node name="tile_tengah17" parent="Node3D4" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 9)
+
+[node name="tile_tengah18" parent="Node3D4" instance=ExtResource("3_gvklg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 9)
+
+[node name="Node3D2" type="Node3D" parent="."]
+
+[node name="tile_tengah19" parent="Node3D2" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.5, 0, 10)
+
+[node name="tile_tengah20" parent="Node3D2" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.5, 0, 9)
+
+[node name="tile_tengah21" parent="Node3D2" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.5, 0, 8)
+
+[node name="tile_tengah22" parent="Node3D2" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.5, 0, 7)
+
+[node name="tile_tengah23" parent="Node3D2" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.5, 0, 6)
+
+[node name="tile_tengah24" parent="Node3D2" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.5, 0, 5)
+
+[node name="tile_tengah25" parent="Node3D2" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.5, 0, 4)
+
+[node name="tile_tengah26" parent="Node3D2" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.5, 0, 3)
+
+[node name="tile_tengah27" parent="Node3D2" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.5, 0, 2)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.5)
+
+[node name="tile_tengah29" parent="Node3D" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 3.00012)
+
+[node name="tile_tengah30" parent="Node3D" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 2.00012)
+
+[node name="tile_tengah31" parent="Node3D" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1.00012)
+
+[node name="tile_tengah32" parent="Node3D" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0.000119209)
+
+[node name="tile_tengah33" parent="Node3D" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -0.999881)
+
+[node name="tile_tengah34" parent="Node3D" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -1.99988)
+
+[node name="tile_tengah35" parent="Node3D" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -2.99988)
+
+[node name="tile_tengah36" parent="Node3D" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -3.99988)
+
+[node name="tile_tengah28" parent="Node3D" instance=ExtResource("3_gvklg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 4.00012)
