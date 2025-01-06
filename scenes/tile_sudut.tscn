@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5rt7dn6j5xqh"]
 
-[ext_resource type="Script" path="res://scenes/tile_sudut.gd" id="1_rvjhf"]
+[ext_resource type="Script" path="res://scripts/tile_sudut.gd" id="1_rvjhf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fk7il"]
 size = Vector3(2, 1, 2)
