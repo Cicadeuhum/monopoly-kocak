@@ -8,7 +8,7 @@ size = Vector3(2, 1, 2)
 [sub_resource type="BoxMesh" id="BoxMesh_r2e1l"]
 size = Vector3(2, 1, 2)
 
-[node name="tile_sudut" type="StaticBody3D"]
+[node name="tile_sudut" type="StaticBody3D" groups=["Tile"]]
 script = ExtResource("1_rvjhf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

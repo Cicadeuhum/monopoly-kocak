@@ -1,4 +1,4 @@
-extends Node
+extends Node3D
 class_name Tile
 
-@export var tile_idx : int
+@export var index : int

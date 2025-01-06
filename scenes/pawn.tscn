@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://duw2lwvusms7x"]
+
+[ext_resource type="Script" path="res://scenes/pawn.gd" id="1_jouim"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1j5ga"]
+height = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_76cob"]
+height = 1.0
+
+[node name="AnimatableBody3D" type="AnimatableBody3D"]
+script = ExtResource("1_jouim")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_1j5ga")
+
+[node name="Pawn" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("CylinderMesh_76cob")
