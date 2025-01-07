@@ -1,0 +1,181 @@
+[gd_scene load_steps=7 format=3 uid="uid://db841cnaifibp"]
+
+[ext_resource type="PackedScene" uid="uid://c5rt7dn6j5xqh" path="res://scenes/tile_sudut.tscn" id="1_r201c"]
+[ext_resource type="PackedScene" uid="uid://b3psvwndgyeyv" path="res://scenes/tile_tengah.tscn" id="2_w1j5s"]
+[ext_resource type="PackedScene" uid="uid://duw2lwvusms7x" path="res://scenes/pawn.tscn" id="3_ct2ot"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_br7uu"]
+sky_top_color = Color(2.5028e-06, 0.487919, 0.667156, 1)
+sky_horizon_color = Color(0.7396, 0.86, 0.845953, 1)
+ground_bottom_color = Color(0, 0.37, 0.6, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_qkpua"]
+sky_material = SubResource("ProceduralSkyMaterial_br7uu")
+
+[sub_resource type="Environment" id="Environment_3qxft"]
+background_mode = 1
+background_color = Color(0.5, 0.35, 0.35, 1)
+sky = SubResource("Sky_qkpua")
+tonemap_mode = 2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3qxft")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, 0.5, -0.5, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.707107, 0.353553, -0.612372, 0, 0.866025, 0.5, 0.707107, 0.353553, -0.612372, 0.5, 4, 0.5)
+projection = 1
+size = 14.3
+near = 0.001
+
+[node name="tile_sudut" parent="." instance=ExtResource("1_r201c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="tile_tengah" parent="tile_sudut" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+index = 1
+
+[node name="tile_tengah2" parent="tile_sudut" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+index = 2
+
+[node name="tile_tengah3" parent="tile_sudut" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
+index = 3
+
+[node name="tile_tengah4" parent="tile_sudut" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
+index = 4
+
+[node name="tile_tengah5" parent="tile_sudut" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
+index = 5
+
+[node name="tile_tengah6" parent="tile_sudut" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0)
+index = 6
+
+[node name="tile_tengah7" parent="tile_sudut" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
+index = 7
+
+[node name="tile_tengah8" parent="tile_sudut" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 0)
+index = 8
+
+[node name="tile_sudut2" parent="." instance=ExtResource("1_r201c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, -0.5, 0)
+index = 9
+
+[node name="tile_tengah" parent="tile_sudut2" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+index = 10
+
+[node name="tile_tengah2" parent="tile_sudut2" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+index = 11
+
+[node name="tile_tengah3" parent="tile_sudut2" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
+index = 12
+
+[node name="tile_tengah4" parent="tile_sudut2" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
+index = 13
+
+[node name="tile_tengah5" parent="tile_sudut2" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
+index = 14
+
+[node name="tile_tengah6" parent="tile_sudut2" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0)
+index = 15
+
+[node name="tile_tengah7" parent="tile_sudut2" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
+index = 16
+
+[node name="tile_tengah8" parent="tile_sudut2" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 0)
+index = 17
+
+[node name="tile_sudut3" parent="." instance=ExtResource("1_r201c")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10, -0.5, 10)
+index = 18
+
+[node name="tile_tengah" parent="tile_sudut3" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+index = 19
+
+[node name="tile_tengah2" parent="tile_sudut3" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+index = 20
+
+[node name="tile_tengah3" parent="tile_sudut3" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
+index = 21
+
+[node name="tile_tengah4" parent="tile_sudut3" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
+index = 22
+
+[node name="tile_tengah5" parent="tile_sudut3" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
+index = 23
+
+[node name="tile_tengah6" parent="tile_sudut3" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0)
+index = 24
+
+[node name="tile_tengah7" parent="tile_sudut3" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
+index = 25
+
+[node name="tile_tengah8" parent="tile_sudut3" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 0)
+index = 26
+
+[node name="tile_sudut4" parent="." instance=ExtResource("1_r201c")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, -0.5, 10)
+index = 27
+
+[node name="tile_tengah" parent="tile_sudut4" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+index = 28
+
+[node name="tile_tengah2" parent="tile_sudut4" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+index = 29
+
+[node name="tile_tengah3" parent="tile_sudut4" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
+index = 30
+
+[node name="tile_tengah4" parent="tile_sudut4" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
+index = 31
+
+[node name="tile_tengah5" parent="tile_sudut4" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
+index = 32
+
+[node name="tile_tengah6" parent="tile_sudut4" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0)
+index = 33
+
+[node name="tile_tengah7" parent="tile_sudut4" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
+index = 34
+
+[node name="tile_tengah8" parent="tile_sudut4" instance=ExtResource("2_w1j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 0)
+index = 35
+
+[node name="Pawn" parent="." instance=ExtResource("3_ct2ot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
