@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://db841cnaifibp"]
+[gd_scene load_steps=8 format=3 uid="uid://db841cnaifibp"]
 
 [ext_resource type="PackedScene" uid="uid://c5rt7dn6j5xqh" path="res://scenes/tile_sudut.tscn" id="1_r201c"]
 [ext_resource type="PackedScene" uid="uid://b3psvwndgyeyv" path="res://scenes/tile_tengah.tscn" id="2_w1j5s"]
+[ext_resource type="Resource" uid="uid://c5lv6hbv2kw4s" path="res://resources/Tile_0.tres" id="3_3hvf8"]
 [ext_resource type="PackedScene" uid="uid://duw2lwvusms7x" path="res://scenes/pawn.tscn" id="3_ct2ot"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_br7uu"]
@@ -25,7 +26,7 @@ tonemap_mode = 2
 environment = SubResource("Environment_3qxft")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, 0.5, -0.5, 0, 0, 0)
+transform = Transform3D(-0.707107, 0.612373, -0.353553, 0, 0.5, 0.866026, 0.707107, 0.612373, -0.353553, 0, 0, 0)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -40,6 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 [node name="tile_tengah" parent="tile_sudut" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
 index = 1
+asset = ExtResource("3_3hvf8")
 
 [node name="tile_tengah2" parent="tile_sudut" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)

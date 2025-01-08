@@ -1,5 +1,9 @@
 extends AnimatableBody3D
 
+var is_turn := false
+var money : float = 0
+var assets : Array[Asset]
+
 var tile_index := 0
 var can_move := true
 
