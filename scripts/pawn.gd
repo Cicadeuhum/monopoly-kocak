@@ -6,6 +6,7 @@ var assets : Array[Asset]
 
 var tile_index := 0
 var can_move := true
+var jailed_turn := 0
 
 const move_time := 1
 

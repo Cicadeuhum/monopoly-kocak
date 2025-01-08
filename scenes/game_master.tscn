@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://2byyg0103ygo"]
+[gd_scene load_steps=2 format=3 uid="uid://2byyg0103ygo"]
 
-[node name="Game Master" type="Node"]
+[ext_resource type="Script" path="res://scripts/game_master.gd" id="1_holss"]
+
+[node name="Game Master" type="Node" groups=["Master"]]
+script = ExtResource("1_holss")
