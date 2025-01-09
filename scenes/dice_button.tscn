@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://hksofckd2tur"]
+
+[ext_resource type="Script" path="res://scripts/dice_button.gd" id="1_o3gbb"]
+
+[node name="roll_dice" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "KOCOK!"
+script = ExtResource("1_o3gbb")
+
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control/Button" method="_on_pressed"]
