@@ -5,6 +5,8 @@ var can_move := true
 const move_time := 1
 signal completed
 
+@onready var tile_menu: Panel = %"Tile Menu"
+
 func _ready() -> void:
 	move_to_tile(0)
 
@@ -43,6 +45,6 @@ func move_steps(steps : int) -> void:
 	can_move = false
 	print("Kocokan: ", steps)
 	move_to_tile(steps)
-	print("DONE")
+	tile_menu.visible = true
 
 	can_move = true
