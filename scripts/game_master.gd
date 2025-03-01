@@ -32,19 +32,14 @@ func init_pawns() -> void:
 func get_pawn(value : int) -> Pawn:
 	return pawns.get(value)
 
+func get_tile(value : int) -> Tile:
+	return tiles.get(value)
+
 func end_current_turn(value : int) -> void:
-	print("value passed: " + str(value))
 	var current = get_pawn(value) as Pawn
-	
 	current.end_turn()
 	current_turn = value + 1
-	print("Current turn: " + str(current_turn))
-	print("Pawn size: " + str(pawns.size()))
 	if current_turn >= pawns.size():
 		current_turn = 0
-		print("ABBY NGENTOT")
 	var next = get_pawn(current_turn) as Pawn
-	next.start_turn() 
-	print("Pawn 0 Turn: " + str(get_pawn(0).is_turn) + " | " + str(get_pawn(0).index))
-	print("Pawn 1 Turn: " + str(get_pawn(1).is_turn) + " | " + str(get_pawn(1).index))
-	print("Pawn 2 Turn: " + str(get_pawn(2).is_turn) + " | " + str(get_pawn(2).index))
+	next.start_turn()

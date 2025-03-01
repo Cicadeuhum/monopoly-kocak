@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://db841cnaifibp"]
+[gd_scene load_steps=9 format=3 uid="uid://db841cnaifibp"]
 
 [ext_resource type="PackedScene" uid="uid://2byyg0103ygo" path="res://scenes/game_master.tscn" id="1_4uivu"]
-[ext_resource type="PackedScene" uid="uid://c5rt7dn6j5xqh" path="res://scenes/tile_sudut.tscn" id="1_r201c"]
-[ext_resource type="PackedScene" uid="uid://b3psvwndgyeyv" path="res://scenes/tile_tengah.tscn" id="2_w1j5s"]
-[ext_resource type="PackedScene" uid="uid://duw2lwvusms7x" path="res://scenes/pawn.tscn" id="3_ct2ot"]
+[ext_resource type="PackedScene" uid="uid://c5rt7dn6j5xqh" path="res://scenes/prefabs/tile_sudut.tscn" id="1_r201c"]
+[ext_resource type="PackedScene" uid="uid://b3psvwndgyeyv" path="res://scenes/prefabs/tile_tengah.tscn" id="2_w1j5s"]
+[ext_resource type="PackedScene" uid="uid://duw2lwvusms7x" path="res://scenes/prefabs/pawn.tscn" id="3_ct2ot"]
+[ext_resource type="Script" path="res://scripts/mechanics/dice_button.gd" id="5_gb3pc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_br7uu"]
 sky_top_color = Color(2.5028e-06, 0.487919, 0.667156, 1)
@@ -44,164 +45,195 @@ color = Color(0.166667, 0, 1, 1)
 [node name="Pawn2" parent="." instance=ExtResource("3_ct2ot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 6.5)
 color = Color(0, 1, 0.0833333, 1)
+index = 1
 
 [node name="Pawn3" parent="." instance=ExtResource("3_ct2ot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 4)
+color = Color(1, 0, 0, 1)
+index = 2
 
-[node name="Tile Sudut" parent="." instance=ExtResource("1_r201c")]
+[node name="Tiles" type="Node3D" parent="."]
 
-[node name="Tile Tengah" parent="Tile Sudut" instance=ExtResource("2_w1j5s")]
+[node name="Tile Sudut" parent="Tiles" instance=ExtResource("1_r201c")]
+
+[node name="Tile Tengah" parent="Tiles/Tile Sudut" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
 index = 1
 
-[node name="Tile Tengah2" parent="Tile Sudut" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah2" parent="Tiles/Tile Sudut" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
 index = 2
 
-[node name="Tile Tengah3" parent="Tile Sudut" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah3" parent="Tiles/Tile Sudut" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
 index = 3
 
-[node name="Tile Tengah4" parent="Tile Sudut" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah4" parent="Tiles/Tile Sudut" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
 index = 4
 
-[node name="Tile Tengah5" parent="Tile Sudut" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah5" parent="Tiles/Tile Sudut" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
 index = 5
 
-[node name="Tile Tengah6" parent="Tile Sudut" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah6" parent="Tiles/Tile Sudut" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0)
 index = 6
 
-[node name="Tile Tengah7" parent="Tile Sudut" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah7" parent="Tiles/Tile Sudut" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
 index = 7
 
-[node name="Tile Tengah8" parent="Tile Sudut" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah8" parent="Tiles/Tile Sudut" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 0)
 index = 8
 
-[node name="Tile Tengah9" parent="Tile Sudut" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah9" parent="Tiles/Tile Sudut" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 0)
 index = 9
 
-[node name="Tile Sudut2" parent="." instance=ExtResource("1_r201c")]
+[node name="Tile Sudut2" parent="Tiles" instance=ExtResource("1_r201c")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 0)
 index = 10
 
-[node name="Tile Tengah" parent="Tile Sudut2" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah" parent="Tiles/Tile Sudut2" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
 index = 11
 
-[node name="Tile Tengah2" parent="Tile Sudut2" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah2" parent="Tiles/Tile Sudut2" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
 index = 12
 
-[node name="Tile Tengah3" parent="Tile Sudut2" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah3" parent="Tiles/Tile Sudut2" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
 index = 13
 
-[node name="Tile Tengah4" parent="Tile Sudut2" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah4" parent="Tiles/Tile Sudut2" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
 index = 14
 
-[node name="Tile Tengah5" parent="Tile Sudut2" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah5" parent="Tiles/Tile Sudut2" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
 index = 15
 
-[node name="Tile Tengah6" parent="Tile Sudut2" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah6" parent="Tiles/Tile Sudut2" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0)
 index = 16
 
-[node name="Tile Tengah7" parent="Tile Sudut2" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah7" parent="Tiles/Tile Sudut2" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
 index = 17
 
-[node name="Tile Tengah8" parent="Tile Sudut2" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah8" parent="Tiles/Tile Sudut2" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 0)
 index = 18
 
-[node name="Tile Tengah9" parent="Tile Sudut2" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah9" parent="Tiles/Tile Sudut2" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 0)
 index = 19
 
-[node name="Tile Sudut3" parent="." instance=ExtResource("1_r201c")]
+[node name="Tile Sudut3" parent="Tiles" instance=ExtResource("1_r201c")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11, 0, 11)
 index = 20
 
-[node name="Tile Tengah" parent="Tile Sudut3" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah" parent="Tiles/Tile Sudut3" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
 index = 21
 
-[node name="Tile Tengah2" parent="Tile Sudut3" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah2" parent="Tiles/Tile Sudut3" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
 index = 22
 
-[node name="Tile Tengah3" parent="Tile Sudut3" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah3" parent="Tiles/Tile Sudut3" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
 index = 23
 
-[node name="Tile Tengah4" parent="Tile Sudut3" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah4" parent="Tiles/Tile Sudut3" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
 index = 24
 
-[node name="Tile Tengah5" parent="Tile Sudut3" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah5" parent="Tiles/Tile Sudut3" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
 index = 25
 
-[node name="Tile Tengah6" parent="Tile Sudut3" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah6" parent="Tiles/Tile Sudut3" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0)
 index = 26
 
-[node name="Tile Tengah7" parent="Tile Sudut3" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah7" parent="Tiles/Tile Sudut3" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
 index = 27
 
-[node name="Tile Tengah8" parent="Tile Sudut3" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah8" parent="Tiles/Tile Sudut3" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 0)
 index = 28
 
-[node name="Tile Tengah9" parent="Tile Sudut3" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah9" parent="Tiles/Tile Sudut3" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 0)
 index = 29
 
-[node name="Tile Sudut4" parent="." instance=ExtResource("1_r201c")]
+[node name="Tile Sudut4" parent="Tiles" instance=ExtResource("1_r201c")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -9.53674e-07, 0, 11)
 index = 30
 
-[node name="Tile Tengah" parent="Tile Sudut4" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah" parent="Tiles/Tile Sudut4" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
 index = 31
 
-[node name="Tile Tengah2" parent="Tile Sudut4" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah2" parent="Tiles/Tile Sudut4" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
 index = 32
 
-[node name="Tile Tengah3" parent="Tile Sudut4" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah3" parent="Tiles/Tile Sudut4" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
 index = 33
 
-[node name="Tile Tengah4" parent="Tile Sudut4" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah4" parent="Tiles/Tile Sudut4" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
 index = 34
 
-[node name="Tile Tengah5" parent="Tile Sudut4" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah5" parent="Tiles/Tile Sudut4" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
 index = 35
 
-[node name="Tile Tengah6" parent="Tile Sudut4" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah6" parent="Tiles/Tile Sudut4" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0)
 index = 36
 
-[node name="Tile Tengah7" parent="Tile Sudut4" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah7" parent="Tiles/Tile Sudut4" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
 index = 37
 
-[node name="Tile Tengah8" parent="Tile Sudut4" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah8" parent="Tiles/Tile Sudut4" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 0)
 index = 38
 
-[node name="Tile Tengah9" parent="Tile Sudut4" instance=ExtResource("2_w1j5s")]
+[node name="Tile Tengah9" parent="Tiles/Tile Sudut4" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 0)
 index = 39
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -93.0
+offset_right = 75.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "KOCOK"
+script = ExtResource("5_gb3pc")
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]

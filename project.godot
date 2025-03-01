@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-UiManager="*res://scripts/auto loads/ui_manager.gd"
+GameMaster="*res://scripts/game_master.gd"
 
 [global_group]
 

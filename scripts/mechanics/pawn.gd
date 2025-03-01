@@ -19,8 +19,7 @@ const MOVE_TIME := 1
 signal turn_complete(index)
 
 func _ready() -> void:
-	#move_to_tile(0)
-	pass
+	init()
 
 func _input(event: InputEvent) -> void:
 	if is_turn && Input.is_action_just_pressed("ui_accept"):
@@ -30,25 +29,18 @@ func _input(event: InputEvent) -> void:
 		move_to_tile(tile_index + 1)
 
 func init() -> void:
-	var new_material = StandardMaterial3D.new()
-	new_material.albedo_color = color
-	mesh_child.material_override = new_material
-	#set_surface_override_material(0, new_material)
-
-func get_tile(value : int) -> Tile:
-	for tile in get_tree().get_nodes_in_group("Tile"):
-		if tile is Tile:
-			if tile.index == value:
-				return tile
-	return null
+	var sm = StandardMaterial3D.new()
+	sm.albedo_color = color
+	var new_mesh = mesh_child.mesh.duplicate()
+	new_mesh.surface_set_material(0, sm)
+	mesh_child.mesh = new_mesh
 
 func move_to_tile(value : int) -> void:
-	print("THIS PAWN INDEX = " + str(index))
 	if not is_turn and not can_move:
 		return
 	
 	can_move = false
-	var new_pos = get_tile(value).global_position + Vector3(0, 0.5, 0)
+	var new_pos = GameMaster.get_tile(value).global_position + Vector3(0, 0.5, 0)
 	
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT)
@@ -58,13 +50,18 @@ func move_to_tile(value : int) -> void:
 	
 	tile_index = value
 	can_move = true
+
+func move_steps(value : int) -> void:
+	var target = tile_index + value
+	if target > GameMaster.tiles.size():
+		target = target % GameMaster.tiles.size()
+	print("target: ", target)
+	await move_to_tile(target)
 	turn_complete.emit(index)
 
 func start_turn() -> void:
 	is_turn = true
 	can_move = true
-	print("Saya pawn " + str(index) + " start")
 
 func end_turn() -> void:
 	is_turn = false
-	print("Saya pawn " + str(index) + " end")
