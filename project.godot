@@ -22,3 +22,5 @@ UiManager="*res://scripts/auto loads/ui_manager.gd"
 [global_group]
 
 Tile=""
+Master=""
+Pawn=""
