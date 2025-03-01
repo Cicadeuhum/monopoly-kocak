@@ -18,3 +18,5 @@ config/icon="res://icon.svg"
 [global_group]
 
 Tile=""
+Master=""
+Pawn=""

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Asset" load_steps=7 format=3 uid="uid://c5lv6hbv2kw4s"]
+
+[ext_resource type="Script" path="res://scripts/asset.gd" id="1_kvrmn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twal1"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_daqkn"]
+material = SubResource("StandardMaterial3D_twal1")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ad17i"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jn2sc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xoxc2"]
+
+[resource]
+script = ExtResource("1_kvrmn")
+value = 0.0
+tile_index = 0
+visual = Array[Mesh]([SubResource("BoxMesh_daqkn"), SubResource("BoxMesh_ad17i"), SubResource("BoxMesh_jn2sc"), SubResource("BoxMesh_xoxc2")])
