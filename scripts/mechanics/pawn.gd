@@ -19,7 +19,7 @@ const MOVE_TIME := 1
 signal turn_complete(index)
 
 func _ready() -> void:
-	init()
+	change_color()
 
 func _input(event: InputEvent) -> void:
 	if is_turn && Input.is_action_just_pressed("ui_accept"):
@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 		
 		move_to_tile(tile_index + 1)
 
-func init() -> void:
+func change_color() -> void:
 	var sm = StandardMaterial3D.new()
 	sm.albedo_color = color
 	var new_mesh = mesh_child.mesh.duplicate()
@@ -53,11 +53,12 @@ func move_to_tile(value : int) -> void:
 
 func move_steps(value : int) -> void:
 	var target = tile_index + value
-	if target > GameMaster.tiles.size():
+	if target >= GameMaster.tiles.size():
 		target = target % GameMaster.tiles.size()
-	print("target: ", target)
 	await move_to_tile(target)
-	turn_complete.emit(index)
+	GameMaster.get_tile(tile_index).set_master(self)
+	%"Menu Tile".visible = true
+	#turn_complete.emit(index)
 
 func start_turn() -> void:
 	is_turn = true

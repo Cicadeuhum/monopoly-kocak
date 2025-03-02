@@ -4,7 +4,7 @@ var pawn
 
 func _on_pressed():
 	var res = roll_dice()
-	print("Kocokan Dadu: ", res)
+	#print("Kocokan Dadu: ", res)
 	GameMaster.get_pawn(GameMaster.current_turn).move_steps(res)
 	
 func roll_dice() -> int:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c23w1fskru2xu"]
+[gd_scene load_steps=6 format=3 uid="uid://c23w1fskru2xu"]
 
 [ext_resource type="Script" path="res://scripts/ui/menu_tile.gd" id="1_36dkl"]
 [ext_resource type="Theme" uid="uid://b0ba7fy76ajr5" path="res://themes/theme_button.tres" id="1_70v2s"]
@@ -9,9 +9,6 @@ bg_color = Color(0.8, 1, 0.7, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa44t"]
 bg_color = Color(1, 0.95, 0.7, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57sd1"]
-bg_color = Color(1, 0.7, 0.7, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4iyys"]
 bg_color = Color(1, 1, 1, 1)
 
@@ -21,9 +18,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -400.0
+offset_left = -325.0
 offset_top = -250.0
-offset_right = 400.0
+offset_right = 325.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -106,33 +103,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_70v2s")
 
-[node name="Panel Sell" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_57sd1")
-
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Panel Sell"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "Sell"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button Sell" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Panel Sell"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_70v2s")
-
 [node name="Panel End Turn" type="Panel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -163,5 +133,4 @@ theme = ExtResource("1_70v2s")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Panel Buy/Button Buy" to="." method="_on_button_buy_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Panel Upgrade/Button Upgrade" to="." method="_on_button_upgrade_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Panel Sell/Button Sell" to="." method="_on_button_sell_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Panel End Turn/Button End Turn" to="." method="_on_button_end_turn_pressed"]

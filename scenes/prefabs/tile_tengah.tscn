@@ -8,8 +8,9 @@ size = Vector3(1, 1, 2)
 [sub_resource type="BoxMesh" id="BoxMesh_r2e1l"]
 size = Vector3(1, 1, 2)
 
-[node name="Tile Tengah" type="Node3D" groups=["Tile"]]
+[node name="Tile Tengah" type="Node3D" node_paths=PackedStringArray("mesh") groups=["Tile"]]
 script = ExtResource("1_t6pgu")
+mesh = NodePath("Collider/CollisionShape3D/MeshInstance3D")
 
 [node name="Collider" type="StaticBody3D" parent="."]
 
