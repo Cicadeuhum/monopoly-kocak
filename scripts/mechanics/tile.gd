@@ -9,11 +9,8 @@ class_name Tile
 
 func set_master(value : Pawn) -> void:
 	master = value
-	#change_color(master.color)
-
-func change_color(value : Color) -> void:
 	var sm = StandardMaterial3D.new()
-	sm.albedo_color = value
+	sm.albedo_color = value.color
 	var new_mesh = mesh.mesh.duplicate()
 	new_mesh.surface_set_material(0, sm)
 	mesh.mesh = new_mesh

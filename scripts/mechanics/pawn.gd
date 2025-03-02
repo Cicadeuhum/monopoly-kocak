@@ -56,8 +56,8 @@ func move_steps(value : int) -> void:
 	if target >= GameMaster.tiles.size():
 		target = target % GameMaster.tiles.size()
 	await move_to_tile(target)
-	GameMaster.get_tile(tile_index).set_master(self)
-	%"Menu Tile".visible = true
+	#GameMaster.get_tile(tile_index).set_master(self)
+	%"Menu Tile".set_enable(true)
 	#turn_complete.emit(index)
 
 func start_turn() -> void:

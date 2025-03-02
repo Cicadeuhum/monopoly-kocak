@@ -1,6 +1,7 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://b0ba7fy76ajr5"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2ckq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld24d"]
+bg_color = Color(0, 0, 0, 0.588235)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nd558"]
 
@@ -14,7 +15,7 @@ bg_color = Color(1, 1, 1, 0)
 bg_color = Color(0, 0, 0, 0.392157)
 
 [resource]
-Button/styles/disabled = SubResource("StyleBoxEmpty_q2ckq")
+Button/styles/disabled = SubResource("StyleBoxFlat_ld24d")
 Button/styles/focus = SubResource("StyleBoxEmpty_nd558")
 Button/styles/hover = SubResource("StyleBoxFlat_2p8s1")
 Button/styles/normal = SubResource("StyleBoxFlat_w4k17")
