@@ -1,8 +1,9 @@
 [gd_resource type="Resource" script_class="Asset" load_steps=2 format=3 uid="uid://dxhku2n724f5c"]
 
-[ext_resource type="Script" path="res://scripts/mechanics/asset.gd" id="1_ksxvo"]
+[ext_resource type="Script" uid="uid://3t0v18golxfa" path="res://scripts/mechanics/asset.gd" id="1_ksxvo"]
 
 [resource]
 script = ExtResource("1_ksxvo")
 value = 0.0
 tile_index = 2
+visual = Array[Mesh]([])

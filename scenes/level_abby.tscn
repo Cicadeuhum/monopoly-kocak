@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c5rt7dn6j5xqh" path="res://scenes/prefabs/tile_sudut.tscn" id="1_r201c"]
 [ext_resource type="PackedScene" uid="uid://b3psvwndgyeyv" path="res://scenes/prefabs/tile_tengah.tscn" id="2_w1j5s"]
 [ext_resource type="PackedScene" uid="uid://duw2lwvusms7x" path="res://scenes/prefabs/pawn.tscn" id="3_ct2ot"]
-[ext_resource type="Script" path="res://scripts/mechanics/dice_button.gd" id="5_gb3pc"]
+[ext_resource type="Script" uid="uid://cpj4x4kfp3uae" path="res://scripts/mechanics/dice_button.gd" id="5_gb3pc"]
 [ext_resource type="PackedScene" uid="uid://c23w1fskru2xu" path="res://scenes/prefabs/ui/menu_tile.tscn" id="6_nuw0i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_br7uu"]

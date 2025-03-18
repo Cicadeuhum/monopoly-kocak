@@ -1,11 +1,11 @@
 extends Button
 
-var pawn
-
 func _on_pressed():
+	var curr_player = GameMaster.get_pawn(GameMaster.current_turn)
+	if curr_player.is_turn and not curr_player.can_move: return
 	var res = roll_dice()
 	#print("Kocokan Dadu: ", res)
-	GameMaster.get_pawn(GameMaster.current_turn).move_steps(res)
+	curr_player.move_steps(res)
 	
 func roll_dice() -> int:
 	var rand_num = RandomNumberGenerator.new()
