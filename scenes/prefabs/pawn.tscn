@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://duw2lwvusms7x"]
 
-[ext_resource type="Script" path="res://scripts/pawn.gd" id="1_jouim"]
+[ext_resource type="Script" uid="uid://b6dckjsn7oext" path="res://scripts/mechanics/pawn.gd" id="1_jouim"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydu8c"]
 

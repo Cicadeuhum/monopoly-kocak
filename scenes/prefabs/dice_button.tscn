@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://hksofckd2tur"]
 
-[ext_resource type="Script" path="res://scripts/dice_button.gd" id="1_o3gbb"]
+[ext_resource type="Script" uid="uid://cpj4x4kfp3uae" path="res://scripts/mechanics/dice_button.gd" id="1_o3gbb"]
 
 [node name="roll_dice" type="Node2D"]
 

@@ -12,8 +12,12 @@ config_version=5
 
 config/name="new project"
 run/main_scene="res://scenes/level_abby.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameMaster="*res://scripts/game_master.gd"
 
 [global_group]
 

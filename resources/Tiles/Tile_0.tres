@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Asset" load_steps=7 format=3 uid="uid://c5lv6hbv2kw4s"]
 
-[ext_resource type="Script" path="res://scripts/asset.gd" id="1_kvrmn"]
+[ext_resource type="Script" uid="uid://3t0v18golxfa" path="res://scripts/mechanics/asset.gd" id="1_kvrmn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twal1"]
 albedo_color = Color(0, 0, 0, 1)
