@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl36g8l53175s"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_suawx"]
-
-[node name="Rumah Kecil" type="MeshInstance3D"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-mesh = SubResource("BoxMesh_suawx")
