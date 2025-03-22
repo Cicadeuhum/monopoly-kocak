@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://db841cnaifibp"]
 
-[ext_resource type="PackedScene" uid="uid://2byyg0103ygo" path="res://scenes/game_master.tscn" id="1_4uivu"]
+[ext_resource type="PackedScene" uid="uid://2byyg0103ygo" path="res://scenes/masters/game_master.tscn" id="1_4uivu"]
 [ext_resource type="PackedScene" uid="uid://c5rt7dn6j5xqh" path="res://scenes/prefabs/tile_sudut.tscn" id="1_r201c"]
 [ext_resource type="PackedScene" uid="uid://b3psvwndgyeyv" path="res://scenes/prefabs/tile_tengah.tscn" id="2_w1j5s"]
 [ext_resource type="PackedScene" uid="uid://duw2lwvusms7x" path="res://scenes/prefabs/pawn.tscn" id="3_ct2ot"]
