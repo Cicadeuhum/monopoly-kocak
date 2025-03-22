@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Asset" load_steps=3 format=3 uid="uid://2ovu3ycldnow"]
+
+[ext_resource type="Script" uid="uid://3t0v18golxfa" path="res://scripts/mechanics/asset.gd" id="1_376ey"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3wut0"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[resource]
+script = ExtResource("1_376ey")
+value = 200.0
+mesh = SubResource("BoxMesh_3wut0")
+metadata/_custom_type_script = "uid://3t0v18golxfa"
