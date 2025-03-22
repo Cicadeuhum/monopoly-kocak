@@ -62,3 +62,7 @@ func cycle_next_turn():
 
 func prison_pawn(pawn_index : int, prison_time : int = 3) -> void:
 	prison_list[pawn_index] = prison_time
+
+
+func _on_ready() -> void:
+	pass # Replace with function body.
