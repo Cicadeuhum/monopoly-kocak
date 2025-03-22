@@ -57,7 +57,11 @@ func move_steps(value : int) -> void:
 		target = target % GameMaster.tiles.size()
 	await move_to_tile(target)
 	#GameMaster.get_tile(tile_index).set_master(self)
-	%"Menu Tile".set_enable(true)
+	var tile = GameMaster.get_tile(tile_index)
+	if tile is TilePurchaseable:
+		%"Menu Tile".set_enable(true)
+	elif tile is TileSpecial:
+		tile.do(self)
 	#turn_complete.emit(index)
 
 func start_turn() -> void:

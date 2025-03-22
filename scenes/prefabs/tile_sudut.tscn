@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c5rt7dn6j5xqh"]
 
-[ext_resource type="Script" uid="uid://dls0me7yn2eyk" path="res://scripts/mechanics/tile.gd" id="1_g0mi1"]
+[ext_resource type="Script" uid="uid://d4g86jlenphls" path="res://scripts/mechanics/tile_special.gd" id="1_p8b6j"]
 [ext_resource type="Shader" uid="uid://dr3rd3xnhrd8v" path="res://shaders/outline.gdshader" id="2_p8b6j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fk7il"]
@@ -20,7 +20,7 @@ material = SubResource("StandardMaterial3D_km7uj")
 size = Vector3(2, 1, 2)
 
 [node name="Tile Sudut" type="Node3D" groups=["Tile"]]
-script = ExtResource("1_g0mi1")
+script = ExtResource("1_p8b6j")
 
 [node name="Collider" type="StaticBody3D" parent="."]
 
