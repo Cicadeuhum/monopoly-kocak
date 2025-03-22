@@ -10,7 +10,7 @@ var build_pos : Array[Vector3] = [
 									Vector3(0.0, 0.6, 0.7),
 									Vector3(-0.3, 0.6, 0.7),
 									Vector3(0.0, 0.6, 0.7)
-									]
+								]
 
 @export_category("Properties")
 @export var mesh : MeshInstance3D
