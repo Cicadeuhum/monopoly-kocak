@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c5rt7dn6j5xqh" path="res://scenes/prefabs/tile_sudut.tscn" id="1_r201c"]
 [ext_resource type="PackedScene" uid="uid://b3psvwndgyeyv" path="res://scenes/prefabs/tile_tengah.tscn" id="2_w1j5s"]
 [ext_resource type="PackedScene" uid="uid://duw2lwvusms7x" path="res://scenes/prefabs/pawn.tscn" id="3_ct2ot"]
-[ext_resource type="Script" uid="uid://cpj4x4kfp3uae" path="res://scripts/mechanics/dice_button.gd" id="5_gb3pc"]
+[ext_resource type="PackedScene" uid="uid://dkrbj8w8vsn16" path="res://scenes/prefabs/ui/menu_player.tscn" id="6_415rv"]
 [ext_resource type="PackedScene" uid="uid://c23w1fskru2xu" path="res://scenes/prefabs/ui/menu_tile.tscn" id="6_nuw0i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_br7uu"]
@@ -221,24 +221,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Menu Player" parent="Control" instance=ExtResource("6_415rv")]
+unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = -103.0
-offset_right = 75.0
-offset_bottom = -53.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "KOCOK"
-script = ExtResource("5_gb3pc")
 
 [node name="Menu Tile" parent="Control" instance=ExtResource("6_nuw0i")]
 unique_name_in_owner = true
 layout_mode = 1
 
-[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
+[connection signal="ready" from="Game Master" to="Game Master" method="_on_ready"]

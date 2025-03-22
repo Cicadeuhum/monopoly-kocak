@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://k2h4asfer45j"]
+
+[ext_resource type="StyleBox" uid="uid://bx265dx3erio2" path="res://resources/Player Choice Button/button_box.tres" id="1_76r76"]
+
+[resource]
+Button/styles/focus = ExtResource("1_76r76")
+Button/styles/normal = ExtResource("1_76r76")
+Button/styles/pressed = ExtResource("1_76r76")

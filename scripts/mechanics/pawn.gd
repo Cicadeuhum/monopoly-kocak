@@ -20,6 +20,7 @@ signal turn_complete(index)
 
 func _ready() -> void:
 	change_color()
+	print(turn_complete.get_connections())
 
 func _input(event: InputEvent) -> void:
 	if is_turn && Input.is_action_just_pressed("ui_accept"):
@@ -50,13 +51,14 @@ func move_to_tile(value : int) -> void:
 	
 	tile_index = value
 	can_move = true
-
+	
 func move_steps(value : int) -> void:
 	var target = tile_index + value
 	if target >= GameMaster.tiles.size():
 		target = target % GameMaster.tiles.size()
 	await move_to_tile(target)
 	#GameMaster.get_tile(tile_index).set_master(self)
+	%"Menu Player".set_turn(false)
 	%"Menu Tile".set_enable(true)
 	#turn_complete.emit(index)
 
