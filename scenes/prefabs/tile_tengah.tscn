@@ -1,7 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3psvwndgyeyv"]
+[gd_scene load_steps=12 format=3 uid="uid://b3psvwndgyeyv"]
 
-[ext_resource type="Script" uid="uid://dls0me7yn2eyk" path="res://scripts/mechanics/tile.gd" id="1_t6pgu"]
+[ext_resource type="Script" uid="uid://ckt7msccka5rl" path="res://scripts/mechanics/tile_purchaseable.gd" id="1_2tnm8"]
 [ext_resource type="Shader" uid="uid://dr3rd3xnhrd8v" path="res://shaders/outline.gdshader" id="2_2tnm8"]
+[ext_resource type="Script" uid="uid://3t0v18golxfa" path="res://scripts/mechanics/asset.gd" id="2_16fam"]
+[ext_resource type="Resource" uid="uid://dynec4wgqu4v6" path="res://resources/Asset/0_Desa/asset0_0.tres" id="3_55it0"]
+[ext_resource type="Resource" uid="uid://2ovu3ycldnow" path="res://resources/Asset/0_Desa/asset0_1.tres" id="4_ccwcy"]
+[ext_resource type="Resource" uid="uid://bjp22hggpgsjl" path="res://resources/Asset/0_Desa/asset0_2.tres" id="5_xs14o"]
+[ext_resource type="Resource" uid="uid://4j86gnhbdcbf" path="res://resources/Asset/0_Desa/asset0_l0.tres" id="6_16fam"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fk7il"]
 size = Vector3(1, 1, 2)
@@ -20,7 +25,8 @@ material = SubResource("StandardMaterial3D_humgr")
 size = Vector3(1, 1, 2)
 
 [node name="Tile Tengah" type="Node3D" node_paths=PackedStringArray("mesh") groups=["Tile"]]
-script = ExtResource("1_t6pgu")
+script = ExtResource("1_2tnm8")
+asset = Array[ExtResource("2_16fam")]([ExtResource("3_55it0"), ExtResource("4_ccwcy"), ExtResource("5_xs14o"), ExtResource("6_16fam")])
 mesh = NodePath("Collider/CollisionShape3D/MeshInstance3D")
 
 [node name="Collider" type="StaticBody3D" parent="."]

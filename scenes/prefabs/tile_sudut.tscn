@@ -19,9 +19,8 @@ next_pass = SubResource("ShaderMaterial_72avx")
 material = SubResource("StandardMaterial3D_km7uj")
 size = Vector3(2, 1, 2)
 
-[node name="Tile Sudut" type="Node3D" node_paths=PackedStringArray("mesh") groups=["Tile"]]
+[node name="Tile Sudut" type="Node3D" groups=["Tile"]]
 script = ExtResource("1_g0mi1")
-mesh = NodePath("Collider/CollisionShape3D/MeshInstance3D")
 
 [node name="Collider" type="StaticBody3D" parent="."]
 
