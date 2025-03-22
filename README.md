@@ -13,3 +13,9 @@ Karakter & Properti Kocak: Nama-nama properti dan karakter dibuat dengan humor k
 Event Random: Peristiwa tidak terduga yang bisa menguntungkan atau malah bikin kacau permainan.
 
 Multiplayer Lokal: Bisa dimainkan bersama teman-teman dalam satu perangkat.
+
+## Teknologi yang Digunakan
+
+Godot Engine sebagai game engine utama.
+
+GDScript untuk scripting dan logika game.
