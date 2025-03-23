@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://db841cnaifibp"]
+[gd_scene load_steps=10 format=3 uid="uid://db841cnaifibp"]
 
-[ext_resource type="PackedScene" uid="uid://2byyg0103ygo" path="res://scenes/masters/game_master.tscn" id="1_4uivu"]
 [ext_resource type="PackedScene" uid="uid://c5rt7dn6j5xqh" path="res://scenes/prefabs/tile_sudut.tscn" id="1_r201c"]
 [ext_resource type="PackedScene" uid="uid://b3psvwndgyeyv" path="res://scenes/prefabs/tile_tengah.tscn" id="2_w1j5s"]
 [ext_resource type="PackedScene" uid="uid://duw2lwvusms7x" path="res://scenes/prefabs/pawn.tscn" id="3_ct2ot"]
+[ext_resource type="Script" uid="uid://b1k6784cbea8u" path="res://scripts/mechanics/plane_special_strategy.gd" id="4_lyruv"]
 [ext_resource type="Script" uid="uid://cpj4x4kfp3uae" path="res://scripts/mechanics/dice_button.gd" id="5_gb3pc"]
-[ext_resource type="Script" uid="uid://c8ca8jj027v1q" path="res://scripts/mechanics/prison_special_strategy.gd" id="5_lyruv"]
 [ext_resource type="PackedScene" uid="uid://c23w1fskru2xu" path="res://scenes/prefabs/ui/menu_tile.tscn" id="6_nuw0i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_br7uu"]
@@ -38,8 +37,6 @@ projection = 1
 size = 13.0
 near = 0.001
 
-[node name="Game Master" parent="." instance=ExtResource("1_4uivu")]
-
 [node name="Pawn" parent="." instance=ExtResource("3_ct2ot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
 color = Color(0.166667, 0, 1, 1)
@@ -57,7 +54,7 @@ index = 2
 [node name="Tiles" type="Node3D" parent="."]
 
 [node name="Tile Sudut" parent="Tiles" instance=ExtResource("1_r201c")]
-strategy = ExtResource("5_lyruv")
+strategy = ExtResource("4_lyruv")
 
 [node name="Tile Tengah" parent="Tiles/Tile Sudut" instance=ExtResource("2_w1j5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
@@ -97,7 +94,7 @@ index = 9
 
 [node name="Tile Sudut2" parent="Tiles" instance=ExtResource("1_r201c")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 0)
-strategy = ExtResource("5_lyruv")
+strategy = ExtResource("4_lyruv")
 index = 10
 
 [node name="Tile Tengah" parent="Tiles/Tile Sudut2" instance=ExtResource("2_w1j5s")]
@@ -138,7 +135,7 @@ index = 19
 
 [node name="Tile Sudut3" parent="Tiles" instance=ExtResource("1_r201c")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11, 0, 11)
-strategy = ExtResource("5_lyruv")
+strategy = ExtResource("4_lyruv")
 index = 20
 
 [node name="Tile Tengah" parent="Tiles/Tile Sudut3" instance=ExtResource("2_w1j5s")]
@@ -179,7 +176,7 @@ index = 29
 
 [node name="Tile Sudut4" parent="Tiles" instance=ExtResource("1_r201c")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -9.53674e-07, 0, 11)
-strategy = ExtResource("5_lyruv")
+strategy = ExtResource("4_lyruv")
 index = 30
 
 [node name="Tile Tengah" parent="Tiles/Tile Sudut4" instance=ExtResource("2_w1j5s")]

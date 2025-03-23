@@ -6,7 +6,7 @@ class_name Pawn
 
 @onready var mesh_child: MeshInstance3D = $Mesh
 
-var is_turn := false
+var is_turn : bool = false
 var money : float = 0
 var assets : Array[Asset]
 

@@ -1,7 +1,7 @@
 extends Node
 
-var tiles : Dictionary
-var pawns : Dictionary
+var tiles : Array[Tile]
+var pawns : Array[Pawn]
 var prison_list : Array[int]
 
 var current_turn := 0
@@ -12,22 +12,18 @@ func _ready() -> void:
 	init_prison_list()
 
 func init_tiles() -> void:
-	var a = get_tree().get_nodes_in_group("Tile")
-	var i = 0
-	for tile in a:
-		if tile is Tile:
-			tiles[i] = tile
-			i = i + 1
+	var group = get_tree().get_nodes_in_group("Tile")
+	for i in range(group.size()):
+		if group[i] is Tile:
+			tiles.append(group[i])
 
 func init_pawns() -> void:
-	var a = get_tree().get_nodes_in_group("Pawn")
-	var i := 0
-	for pawn in a:
-		if pawn is Pawn:
-			pawn.turn_complete.connect(end_current_turn)
-			pawn.index = i
-			pawns[i] = pawn
-			i = i + 1
+	var group = get_tree().get_nodes_in_group("Pawn")
+	for i in range(group.size()):
+		if group[i] is Pawn:
+			group[i].turn_complete.connect(end_current_turn)
+			group[i].index = i
+			pawns.append(group[i])
 	current_turn = 0
 	get_pawn(0).start_turn()
 
@@ -36,10 +32,10 @@ func init_prison_list() -> void:
 		prison_list.append(0)
 
 func get_pawn(value : int) -> Pawn:
-	return pawns.get(value)
+	return pawns[value]
 
 func get_tile(value : int) -> Tile:
-	return tiles.get(value)
+	return tiles[value]
 
 func end_current_turn(value : int) -> void:
 	var current = get_pawn(value) as Pawn
@@ -62,7 +58,3 @@ func cycle_next_turn():
 
 func prison_pawn(pawn_index : int, prison_time : int = 3) -> void:
 	prison_list[pawn_index] = prison_time
-
-
-func _on_ready() -> void:
-	pass # Replace with function body.
