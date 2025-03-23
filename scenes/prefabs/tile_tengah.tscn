@@ -24,15 +24,13 @@ next_pass = SubResource("ShaderMaterial_lbseg")
 material = SubResource("StandardMaterial3D_humgr")
 size = Vector3(1, 1, 2)
 
-[node name="Tile Tengah" type="Node3D" node_paths=PackedStringArray("mesh") groups=["Tile"]]
+[node name="Tile Tengah" type="StaticBody3D" node_paths=PackedStringArray("mesh") groups=["Tile"]]
 script = ExtResource("1_2tnm8")
 asset = Array[ExtResource("2_16fam")]([ExtResource("3_55it0"), ExtResource("4_ccwcy"), ExtResource("5_xs14o"), ExtResource("6_16fam")])
-mesh = NodePath("Collider/CollisionShape3D/MeshInstance3D")
+mesh = NodePath("CollisionShape3D/MeshInstance3D")
 
-[node name="Collider" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collider"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_fk7il")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Collider/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
 mesh = SubResource("BoxMesh_r2e1l")

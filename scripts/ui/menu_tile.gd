@@ -25,7 +25,7 @@ func set_enable(value : bool) -> void:
 
 func end_player_turn() -> void:
 	var player = GameMaster.get_pawn(GameMaster.current_turn)
-	player.turn_complete.emit(player.index)
+	player.turn_complete.emit()
 
 func _on_button_buy_pressed() -> void:
 	var player = GameMaster.get_pawn(GameMaster.current_turn)

@@ -37,10 +37,10 @@ func get_pawn(value : int) -> Pawn:
 func get_tile(value : int) -> Tile:
 	return tiles[value]
 
-func end_current_turn(value : int) -> void:
-	var current = get_pawn(value) as Pawn
+func end_current_turn() -> void:
+	var current = get_pawn(current_turn) as Pawn
 	current.end_turn()
-	current_turn = value + 1
+	current_turn = current_turn + 1
 	if current_turn >= pawns.size():
 		current_turn = 0
 	cycle_next_turn()

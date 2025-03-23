@@ -2,7 +2,6 @@ extends Button
 
 func _on_pressed():
 	var curr_player : Pawn = GameMaster.get_pawn(GameMaster.current_turn)
-	print("CURR PLAYER: ", curr_player)
 	if curr_player.is_turn and not curr_player.can_move: return
 	var res = roll_dice()
 	#print("Kocokan Dadu: ", res)

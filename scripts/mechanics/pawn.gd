@@ -56,6 +56,7 @@ func move_steps(value : int) -> void:
 	if target >= GameMaster.tiles.size():
 		target = target % GameMaster.tiles.size()
 	await move_to_tile(target)
+	#can_move = false
 	#GameMaster.get_tile(tile_index).set_master(self)
 	var tile = GameMaster.get_tile(tile_index)
 	if tile is TilePurchaseable:

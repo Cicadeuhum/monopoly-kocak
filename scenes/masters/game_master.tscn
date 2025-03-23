@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://2byyg0103ygo"]
 
-[ext_resource type="Script" uid="uid://i73qkp8gxff5" path="res://scripts/game_master.gd" id="1_holss"]
+[ext_resource type="Script" uid="uid://i73qkp8gxff5" path="res://scripts/autoloads/game_master.gd" id="1_holss"]
 
 [node name="Game Master" type="Node" groups=["Master"]]
 script = ExtResource("1_holss")
