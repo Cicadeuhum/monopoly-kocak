@@ -16,7 +16,7 @@ var jailed_turn := 0
 
 const MOVE_TIME := 1
 
-signal turn_complete(index)
+signal turn_complete(index: int)
 
 func _ready() -> void:
 	change_color()
@@ -64,7 +64,7 @@ func move_steps(value : int) -> void:
 		%"Menu Tile".set_enable(true)
 	elif tile is TileSpecial:
 		tile.do(self)
-
+		
 	#turn_complete.emit(index)
 
 func start_turn() -> void:
