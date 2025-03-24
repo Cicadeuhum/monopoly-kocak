@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://hksofckd2tur"]
+[gd_scene load_steps=2 format=3 uid="uid://bl03hkr5amrik"]
 
-[ext_resource type="Script" uid="uid://cpj4x4kfp3uae" path="res://scripts/mechanics/dice_button.gd" id="1_o3gbb"]
+[sub_resource type="GDScript" id="GDScript_mjpb6"]
+script/source = "extends Button
+"
 
 [node name="roll_dice" type="Node2D"]
 
@@ -17,6 +19,6 @@ layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 text = "KOCOK!"
-script = ExtResource("1_o3gbb")
+script = SubResource("GDScript_mjpb6")
 
 [connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control/Button" method="_on_pressed"]

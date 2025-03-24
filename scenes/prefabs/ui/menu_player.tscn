@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkrbj8w8vsn16"]
+
+[ext_resource type="Script" uid="uid://ddnxrclyw1hn4" path="res://scripts/ui/menu_player.gd" id="1_oxlbg"]
+[ext_resource type="Theme" uid="uid://k2h4asfer45j" path="res://resources/Player Choice Button/button_theme.tres" id="2_2ylu3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxlbg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ylu3"]
+
+[node name="Menu Player" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_oxlbg")
+script = ExtResource("1_oxlbg")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -120.0
+offset_right = 180.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2ylu3")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button Ngocok" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_2ylu3")
+text = "KOCOK"
+
+[node name="Button Surrender" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "SURRENDER"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Button Ngocok" to="." method="_on_button_ngocok_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Button Surrender" to="." method="_on_button_surrender_pressed"]

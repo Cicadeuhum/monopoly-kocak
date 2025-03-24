@@ -16,7 +16,7 @@ var jailed_turn := 0
 
 const MOVE_TIME := 1
 
-signal turn_complete(index)
+signal turn_complete(index: int)
 
 func _ready() -> void:
 	change_color()
@@ -50,18 +50,21 @@ func move_to_tile(value : int) -> void:
 	
 	tile_index = value
 	can_move = true
-
+	
 func move_steps(value : int) -> void:
 	var target = tile_index + value
 	if target >= GameMaster.tiles.size():
 		target = target % GameMaster.tiles.size()
 	await move_to_tile(target)
 	#GameMaster.get_tile(tile_index).set_master(self)
+	
 	var tile = GameMaster.get_tile(tile_index)
 	if tile is TilePurchaseable:
+		%"Menu Player".set_turn(false)
 		%"Menu Tile".set_enable(true)
 	elif tile is TileSpecial:
 		tile.do(self)
+		
 	#turn_complete.emit(index)
 
 func start_turn() -> void:
