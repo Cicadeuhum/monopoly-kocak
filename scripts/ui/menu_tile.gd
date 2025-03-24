@@ -13,6 +13,7 @@ func set_enable(value : bool) -> void:
 	visible = value
 	if value == false :
 		end_player_turn()
+		%"Menu Player".set_turn(true)
 		return
 	var player = GameMaster.get_pawn(GameMaster.current_turn)
 	var tile = GameMaster.get_tile(player.tile_index)
@@ -25,7 +26,10 @@ func set_enable(value : bool) -> void:
 
 func end_player_turn() -> void:
 	var player = GameMaster.get_pawn(GameMaster.current_turn)
-	player.turn_complete.emit()
+	print("before: ", GameMaster.current_turn)
+	#player.turn_complete.emit(GameMaster.current_turn)
+	GameMaster.end_current_turn(GameMaster.current_turn)
+	print("after: ", GameMaster.current_turn)
 
 func _on_button_buy_pressed() -> void:
 	var player = GameMaster.get_pawn(GameMaster.current_turn)
@@ -41,5 +45,4 @@ func _on_button_upgrade_pressed() -> void:
 	print("Tambah")
 
 func _on_button_end_turn_pressed() -> void:
-	end_player_turn()
 	set_enable(false)

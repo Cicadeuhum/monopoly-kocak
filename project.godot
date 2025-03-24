@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="new project"
-run/main_scene="res://scenes/level_abby.tscn"
+config/name="Monopoly Kocak"
+run/main_scene="res://scenes/monopoly.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
