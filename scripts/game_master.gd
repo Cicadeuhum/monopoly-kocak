@@ -20,10 +20,8 @@ func init_tiles() -> void:
 			i = i + 1
 
 func init_pawns() -> void:
-	print("test KONOTL MASUk")
 	var a = get_tree().get_nodes_in_group("Pawn")
 	var i := 0
-	print('test ',a)
 	for pawn in a:
 		if pawn is Pawn:
 			pawn.turn_complete.connect(end_current_turn)
@@ -63,7 +61,6 @@ func delete_pawn(value : int) -> void:
 			pawns.erase(next_id)
 		next_turn = value
 	else:
-		print('ets')
 		next_turn = 0
 	
 	var turn = get_pawn(next_turn) as Pawn

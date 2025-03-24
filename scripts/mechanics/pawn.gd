@@ -20,7 +20,6 @@ signal turn_complete(index)
 
 func _ready() -> void:
 	change_color()
-	print(turn_complete.get_connections())
 
 func _input(event: InputEvent) -> void:
 	if is_turn && Input.is_action_just_pressed("ui_accept"):
