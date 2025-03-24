@@ -1,16 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5rt7dn6j5xqh"]
+[gd_scene load_steps=7 format=3 uid="uid://c5rt7dn6j5xqh"]
 
-[ext_resource type="Script" uid="uid://dls0me7yn2eyk" path="res://scripts/mechanics/tile.gd" id="1_g0mi1"]
+[ext_resource type="Script" uid="uid://d4g86jlenphls" path="res://scripts/mechanics/tile_special.gd" id="1_p8b6j"]
+[ext_resource type="Shader" uid="uid://dr3rd3xnhrd8v" path="res://shaders/outline.gdshader" id="2_p8b6j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fk7il"]
 size = Vector3(2, 1, 2)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_72avx"]
+render_priority = 0
+shader = ExtResource("2_p8b6j")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/size = 1.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_km7uj"]
+next_pass = SubResource("ShaderMaterial_72avx")
+
 [sub_resource type="BoxMesh" id="BoxMesh_r2e1l"]
+material = SubResource("StandardMaterial3D_km7uj")
 size = Vector3(2, 1, 2)
 
-[node name="Tile Sudut" type="Node3D" node_paths=PackedStringArray("mesh") groups=["Tile"]]
-script = ExtResource("1_g0mi1")
-mesh = NodePath("Collider/CollisionShape3D/MeshInstance3D")
+[node name="Tile Sudut" type="Node3D" groups=["Tile"]]
+script = ExtResource("1_p8b6j")
 
 [node name="Collider" type="StaticBody3D" parent="."]
 
