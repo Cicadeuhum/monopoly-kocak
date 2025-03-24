@@ -12,6 +12,7 @@ func _ready() -> void:
 		print("No strategy assigned to this tile.")
 
 func do(pawn : Pawn):
+#	strategy harus extend dari SpecialStrategyBase dan punya method do()
 	if strategy_instance.has_method("do"):
 		strategy_instance.do(pawn)
 	else:
