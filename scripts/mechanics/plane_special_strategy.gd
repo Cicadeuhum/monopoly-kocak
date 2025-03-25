@@ -12,9 +12,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("select_tile"):
 		var result = CameraMaster.get_object_from_view(mouse)
 		var tile = result as Tile
-		print("RESULT: ", tile)
 		if tile:
-			if tile.index != GameMaster.get_pawn(GameMaster.current_turn).index:
+			if tile.index != GameMaster.get_pawn(GameMaster.current_turn).tile_index:
 				set_process(false)
 				GameMaster.get_pawn(GameMaster.current_turn).move_to_specified_tile(tile.index)
 			else:
