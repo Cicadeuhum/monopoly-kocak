@@ -6,7 +6,7 @@ class_name Pawn
 
 @onready var mesh_child: MeshInstance3D = $Mesh
 
-var is_turn := false
+var is_turn : bool = false
 var money : float = 0
 var assets : Array[Asset]
 
@@ -56,16 +56,21 @@ func move_steps(value : int) -> void:
 	if target >= GameMaster.tiles.size():
 		target = target % GameMaster.tiles.size()
 	await move_to_tile(target)
-	#GameMaster.get_tile(tile_index).set_master(self)
-	
 	var tile = GameMaster.get_tile(tile_index)
 	if tile is TilePurchaseable:
 		%"Menu Player".set_turn(false)
 		%"Menu Tile".set_enable(true)
 	elif tile is TileSpecial:
 		tile.do(self)
-		
-	#turn_complete.emit(index)
+
+func move_to_specified_tile(value : int) -> void:
+	await move_to_tile(value)
+	var tile = GameMaster.get_tile(tile_index)
+	if tile is TilePurchaseable:
+		%"Menu Player".set_turn(false)
+		%"Menu Tile".set_enable(true)
+	elif tile is TileSpecial:
+		tile.do(self)
 
 func start_turn() -> void:
 	is_turn = true

@@ -1,7 +1,5 @@
 extends Node
 
-#var tiles : Dictionary
-#var pawns : Dictionary
 @onready var prison_list : Array[int] 
 
 @onready var current_turn := 0
@@ -10,36 +8,11 @@ extends Node
 
 func _ready() -> void:
 	init_prison_list()
-
-func _on_ready() -> void:
-	get_pawn(current_turn).start_turn()
 	
 	for pawn in pawns:
 		pawn.turn_complete.connect(end_current_turn)
 	
-	#init_tiles()
-	#init_pawns()
-
-#func init_tiles() -> void:
-	#var a = get_tree().get_nodes_in_group("Tile")
-	#var i = 0
-	#for tile in a:
-		#if tile is Tile:
-			#tiles[i] = tile
-			#i = i + 1
-#
-#func init_pawns() -> void:
-	#print('cehck ini masuk')
-	#var a = get_tree().get_nodes_in_group("Pawn")
-	#var i := 0
-	#for pawn in a:
-		#if pawn is Pawn:
-			#pawn.turn_complete.connect(end_current_turn)
-			#pawn.index = i
-			#pawns[i] = pawn
-			#i = i + 1
-	#current_turn = 0
-	#get_pawn(0).start_turn()
+	get_pawn(current_turn).start_turn()
 
 func get_next_turn(value : int) -> int:
 	return 0 if value >= pawns.size() else value
@@ -78,10 +51,10 @@ func delete_pawn(value : int) -> void:
 	
 	current_turn = next_turn
 
-func end_current_turn(value : int) -> void:
-	var current = get_pawn(value) as Pawn
+func end_current_turn() -> void:
+	var current = get_pawn(current_turn) as Pawn
 	current.end_turn()
-	current_turn = value + 1
+	current_turn = current_turn + 1
 	if current_turn >= pawns.size():
 		current_turn = 0
 	cycle_next_turn()

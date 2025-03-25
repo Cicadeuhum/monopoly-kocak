@@ -28,7 +28,7 @@ func end_player_turn() -> void:
 	var player = GameMaster.get_pawn(GameMaster.current_turn)
 	print("before: ", GameMaster.current_turn)
 	#player.turn_complete.emit(GameMaster.current_turn)
-	GameMaster.end_current_turn(GameMaster.current_turn)
+	GameMaster.end_current_turn()
 	print("after: ", GameMaster.current_turn)
 
 func _on_button_buy_pressed() -> void:
