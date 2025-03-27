@@ -29,22 +29,9 @@ func get_tile(value : int) -> Tile:
 
 func delete_pawn(value : int) -> void:
 	if pawns.size() < 3: return
+	pawns.remove_at(value)
 	
-	pawns.erase(value)
-	
-	var next_turn = -1
-	
-	#Pawn terletak di awal atau tengah(sebelum akhir)
-	if value < pawns.size() - 1:
-		var temp = value
-		var next_pawn = temp + 1
-		for next_id in range(next_pawn, pawns.size() + 1):
-			pawns[temp] = pawns[next_id]
-			temp+=1
-			pawns.erase(next_id)
-		next_turn = value
-	else:
-		next_turn = 0
+	var next_turn = (0 if pawns.size() == value else value)
 	
 	var turn = get_pawn(next_turn) as Pawn
 	turn.start_turn()
