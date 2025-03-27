@@ -25,6 +25,7 @@ CameraMaster="*res://scripts/autoloads/camera_master.gd"
 Tile=""
 Master=""
 Pawn=""
+UI=""
 
 [input]
 
