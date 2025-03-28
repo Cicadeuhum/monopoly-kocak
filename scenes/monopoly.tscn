@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://db841cnaifibp"]
+[gd_scene load_steps=11 format=3 uid="uid://db841cnaifibp"]
 
 [ext_resource type="PackedScene" uid="uid://duw2lwvusms7x" path="res://scenes/prefabs/pawn.tscn" id="1_vcvt6"]
 [ext_resource type="PackedScene" uid="uid://c5rt7dn6j5xqh" path="res://scenes/prefabs/tile_sudut.tscn" id="2_17ume"]
-[ext_resource type="Script" uid="uid://b1k6784cbea8u" path="res://scripts/mechanics/plane_special_strategy.gd" id="4_17ume"]
+[ext_resource type="Script" uid="uid://c2ka5ksy16hg7" path="res://scripts/mechanics/gamble_special_strategy.gd" id="3_17ume"]
 [ext_resource type="PackedScene" uid="uid://b3psvwndgyeyv" path="res://scenes/prefabs/tile_tengah.tscn" id="4_mkcyw"]
 [ext_resource type="PackedScene" uid="uid://dkrbj8w8vsn16" path="res://scenes/prefabs/ui/menu_player.tscn" id="5_pyax6"]
 [ext_resource type="PackedScene" uid="uid://c23w1fskru2xu" path="res://scenes/prefabs/ui/menu_tile.tscn" id="6_doggl"]
+[ext_resource type="PackedScene" uid="uid://crjue0q8f175m" path="res://scenes/prefabs/ui/menu_gamble.tscn" id="7_17ume"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_br7uu"]
 sky_top_color = Color(2.5028e-06, 0.487919, 0.667156, 1)
@@ -55,7 +56,7 @@ index = 2
 [node name="Tiles" type="Node3D" parent="."]
 
 [node name="Tile Sudut" parent="Tiles" instance=ExtResource("2_17ume")]
-strategy = ExtResource("4_17ume")
+strategy = ExtResource("3_17ume")
 
 [node name="Tile Tengah" parent="Tiles/Tile Sudut" instance=ExtResource("4_mkcyw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
@@ -95,7 +96,7 @@ index = 9
 
 [node name="Tile Sudut2" parent="Tiles" instance=ExtResource("2_17ume")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 0)
-strategy = ExtResource("4_17ume")
+strategy = ExtResource("3_17ume")
 index = 10
 
 [node name="Tile Tengah" parent="Tiles/Tile Sudut2" instance=ExtResource("4_mkcyw")]
@@ -136,7 +137,7 @@ index = 19
 
 [node name="Tile Sudut3" parent="Tiles" instance=ExtResource("2_17ume")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11, 0, 11)
-strategy = ExtResource("4_17ume")
+strategy = ExtResource("3_17ume")
 index = 20
 
 [node name="Tile Tengah" parent="Tiles/Tile Sudut3" instance=ExtResource("4_mkcyw")]
@@ -177,7 +178,7 @@ index = 29
 
 [node name="Tile Sudut4" parent="Tiles" instance=ExtResource("2_17ume")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -9.53674e-07, 0, 11)
-strategy = ExtResource("4_17ume")
+strategy = ExtResource("3_17ume")
 index = 30
 
 [node name="Tile Tengah" parent="Tiles/Tile Sudut4" instance=ExtResource("4_mkcyw")]
@@ -229,5 +230,9 @@ unique_name_in_owner = true
 layout_mode = 1
 
 [node name="Menu Tile" parent="Control" instance=ExtResource("6_doggl")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="Menu Gamble" parent="Control" instance=ExtResource("7_17ume")]
 unique_name_in_owner = true
 layout_mode = 1
