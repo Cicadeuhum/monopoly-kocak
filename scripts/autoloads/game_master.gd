@@ -1,7 +1,6 @@
 extends Node
 
-@onready var prison_list : Array[int] 
-
+@onready var prison_list: Array[int]
 @onready var current_turn := 0
 @onready var pawns := get_tree().get_nodes_in_group("Pawn")
 @onready var tiles := get_tree().get_nodes_in_group("Tile")
@@ -14,20 +13,23 @@ func _ready() -> void:
 	
 	get_pawn(current_turn).start_turn()
 
-func get_next_turn(value : int) -> int:
+func get_next_turn(value: int) -> int:
 	return 0 if value >= pawns.size() else value
 
 func init_prison_list() -> void:
 	for i in range(pawns.size()):
 		prison_list.append(0)
 
-func get_pawn(value : int) -> Pawn:
+func get_pawn(value: int) -> Pawn:
 	return pawns.get(value)
 
-func get_tile(value : int) -> Tile:
+func getCurrTurn() -> int:
+	return current_turn
+
+func get_tile(value: int) -> Tile:
 	return tiles.get(value)
 
-func delete_pawn(value : int) -> void:
+func delete_pawn(value: int) -> void:
 	if pawns.size() < 3: return
 	pawns.remove_at(value)
 	
@@ -58,5 +60,5 @@ func cycle_next_turn():
 	
 	get_pawn(current_turn).start_turn()
 
-func prison_pawn(pawn_index : int, prison_time : int = 3) -> void:
+func prison_pawn(pawn_index: int, prison_time: int = 3) -> void:
 	prison_list[pawn_index] = prison_time

@@ -1,4 +1,4 @@
-extends  Panel
+extends Panel
 class_name MenuTile
 
 @onready var button_buy: Button = $"MarginContainer/VBoxContainer/HBoxContainer/Panel Buy/Button Buy"
@@ -9,9 +9,9 @@ const disabled_color = 50
 func _ready() -> void:
 	visible = false
 
-func set_enable(value : bool) -> void:
+func set_enable(value: bool) -> void:
 	visible = value
-	if value == false :
+	if value == false:
 		end_player_turn()
 		%"Menu Player".set_turn(true)
 		return
