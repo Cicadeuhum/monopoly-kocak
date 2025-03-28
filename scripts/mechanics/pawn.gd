@@ -1,20 +1,18 @@
 extends Node3D
 class_name Pawn
 
-@export var color : Color
+@onready var mesh_child: MeshInstance3D = $Mesh
+@export var color: Color
 @export var index := 0
 
-@onready var mesh_child: MeshInstance3D = $Mesh
+const MOVE_TIME := 1
 
-var is_turn : bool = false
-var money : float = 0
-var assets : Array[Asset]
-
+var is_turn: bool = false
+var money: float = 0
+var assets: Array[Asset]
 var tile_index := -1
 var can_move := false
 var jailed_turn := 0
-
-const MOVE_TIME := 1
 
 signal turn_complete(index: int)
 
@@ -35,7 +33,7 @@ func change_color() -> void:
 	new_mesh.surface_set_material(0, sm)
 	mesh_child.mesh = new_mesh
 
-func move_to_tile(value : int) -> void:
+func move_to_tile(value: int) -> void:
 	if not is_turn and not can_move:
 		return
 	
@@ -51,7 +49,7 @@ func move_to_tile(value : int) -> void:
 	tile_index = value
 	can_move = true
 	
-func move_steps(value : int) -> void:
+func move_steps(value: int) -> void:
 	var target = tile_index + value
 	if target >= GameMaster.tiles.size():
 		target = target % GameMaster.tiles.size()
@@ -63,7 +61,7 @@ func move_steps(value : int) -> void:
 	elif tile is TileSpecial:
 		tile.do(self)
 
-func move_to_specified_tile(value : int) -> void:
+func move_to_specified_tile(value: int) -> void:
 	await move_to_tile(value)
 	var tile = GameMaster.get_tile(tile_index)
 	if tile is TilePurchaseable:
@@ -78,3 +76,9 @@ func start_turn() -> void:
 
 func end_turn() -> void:
 	is_turn = false
+
+func updateMoney(money: float) -> void:
+	self.money = money
+
+func getMoney() -> float:
+	return money
