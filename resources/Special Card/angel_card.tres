@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SpecialCard" load_steps=2 format=3 uid="uid://duusjayyol5p7"]
+
+[ext_resource type="Script" uid="uid://uu5ckhkfmk55" path="res://resources/Special Card/special_card.gd" id="1_y0uqf"]
+
+[resource]
+script = ExtResource("1_y0uqf")
+name = "Angel Card"
+metadata/_custom_type_script = "uid://uu5ckhkfmk55"

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://duw2lwvusms7x" path="res://scenes/prefabs/pawn.tscn" id="1_vcvt6"]
 [ext_resource type="PackedScene" uid="uid://c5rt7dn6j5xqh" path="res://scenes/prefabs/tile_sudut.tscn" id="2_17ume"]
-[ext_resource type="Script" uid="uid://c2ka5ksy16hg7" path="res://scripts/mechanics/gamble_special_strategy.gd" id="3_17ume"]
+[ext_resource type="Script" uid="uid://dkq4i5h602og0" path="res://scripts/mechanics/random_card_special_strategy.gd" id="3_17ume"]
 [ext_resource type="PackedScene" uid="uid://b3psvwndgyeyv" path="res://scenes/prefabs/tile_tengah.tscn" id="4_mkcyw"]
 [ext_resource type="PackedScene" uid="uid://dkrbj8w8vsn16" path="res://scenes/prefabs/ui/menu_player.tscn" id="5_pyax6"]
 [ext_resource type="PackedScene" uid="uid://c23w1fskru2xu" path="res://scenes/prefabs/ui/menu_tile.tscn" id="6_doggl"]
