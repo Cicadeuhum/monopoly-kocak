@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Asset" load_steps=3 format=3 uid="uid://2ovu3ycldnow"]
+[gd_resource type="Resource" script_class="Asset" format=3 uid="uid://2ovu3ycldnow"]
 
 [ext_resource type="Script" uid="uid://3t0v18golxfa" path="res://scripts/mechanics/asset.gd" id="1_376ey"]
 

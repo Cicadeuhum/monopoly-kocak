@@ -8,17 +8,26 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Monopoly Kocak"
 run/main_scene="res://scenes/monopoly.tscn"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameMaster="*res://scripts/autoloads/game_master.gd"
 CameraMaster="*res://scripts/autoloads/camera_master.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [global_group]
 

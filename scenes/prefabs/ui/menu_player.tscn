@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkrbj8w8vsn16"]
+[gd_scene format=3 uid="uid://dkrbj8w8vsn16"]
 
 [ext_resource type="Script" uid="uid://ddnxrclyw1hn4" path="res://scripts/ui/menu_player.gd" id="1_oxlbg"]
 [ext_resource type="Theme" uid="uid://k2h4asfer45j" path="res://resources/Player Choice Button/button_theme.tres" id="2_2ylu3"]
+[ext_resource type="Script" uid="uid://k2u57461boxx" path="res://scripts/ui/dice_roll_viewer.gd" id="3_h1h32"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxlbg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ylu3"]
 
-[node name="Menu Player" type="Panel"]
+[node name="Menu Player" type="Panel" unique_id=37399448]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,7 +17,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_oxlbg")
 script = ExtResource("1_oxlbg")
 
-[node name="Button Container" type="CenterContainer" parent="."]
+[node name="Button Container" type="CenterContainer" parent="." unique_id=1783360265]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -29,28 +30,28 @@ offset_right = 180.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="Button Container"]
+[node name="PanelContainer" type="PanelContainer" parent="Button Container" unique_id=520245210]
 custom_minimum_size = Vector2(120, 60)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_2ylu3")
 
-[node name="MarginContainer" type="MarginContainer" parent="Button Container/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Button Container/PanelContainer" unique_id=1867941384]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Button Container/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Button Container/PanelContainer/MarginContainer" unique_id=1837387900]
 layout_mode = 2
 alignment = 1
 
-[node name="Button Ngocok" type="Button" parent="Button Container/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Button Ngocok" type="Button" parent="Button Container/PanelContainer/MarginContainer/VBoxContainer" unique_id=246212648]
 layout_mode = 2
 theme = ExtResource("2_2ylu3")
 text = "KOCOK"
 
-[node name="Button Surrender" type="Button" parent="Button Container/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Button Surrender" type="Button" parent="Button Container/PanelContainer/MarginContainer/VBoxContainer" unique_id=749025097]
 layout_mode = 2
 text = "SURRENDER"
 
-[node name="Money Container" type="CenterContainer" parent="."]
+[node name="Money Container" type="CenterContainer" parent="." unique_id=239778611]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -59,18 +60,55 @@ offset_top = -120.0
 offset_right = 250.0
 grow_vertical = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="Money Container"]
+[node name="PanelContainer" type="PanelContainer" parent="Money Container" unique_id=836098557]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Money Container/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Money Container/PanelContainer" unique_id=1473081490]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Money Container/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Money Container/PanelContainer/MarginContainer" unique_id=638778567]
 layout_mode = 2
 
-[node name="Money Label" type="Label" parent="Money Container/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Money Label" type="Label" parent="Money Container/PanelContainer/MarginContainer/VBoxContainer" unique_id=242149540]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="Roll Container" type="MarginContainer" parent="." unique_id=1750299027]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -427.0
+offset_top = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1717994054]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -427.0
+offset_top = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 1
+script = ExtResource("3_h1h32")
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1293546645]
+layout_mode = 2
+text = "Roll"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Roll Label" type="Label" parent="VBoxContainer" unique_id=940548209]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button Container/PanelContainer/MarginContainer/VBoxContainer/Button Ngocok" to="." method="_on_button_ngocok_pressed"]
 [connection signal="pressed" from="Button Container/PanelContainer/MarginContainer/VBoxContainer/Button Surrender" to="." method="_on_button_surrender_pressed"]

@@ -1,6 +1,7 @@
 extends Panel
 
 var gm
+signal on_roll_complete(int)
 
 func _ready() -> void:
 	gm = GameMaster
@@ -28,6 +29,7 @@ func _on_button_ngocok_pressed() -> void:
 	if curr_player.is_turn and not curr_player.can_move: return
 	var res = roll_dice()
 	curr_player.move_steps(res)
+	on_roll_complete.emit(res)
 
 func _on_button_surrender_pressed() -> void:
 	gm.delete_pawn(gm.current_turn)
